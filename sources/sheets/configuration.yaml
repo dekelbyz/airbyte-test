@@ -1,0 +1,22 @@
+# Configuration for airbyte/source-google-sheets
+# Documentation about this connector can be found at https://docs.airbyte.com/integrations/sources/google-sheets
+resource_name: "sheets"
+definition_type: source
+definition_id: 71607ba1-c0ac-4799-8049-7f4b90dd50f7
+definition_image: airbyte/source-google-sheets
+definition_version: 0.2.31
+
+# EDIT THE CONFIGURATION BELOW!
+configuration:
+  credentials:
+    ## -------- Pick one valid structure among the examples below: --------
+    auth_type: "Client" # REQUIRED | string
+    client_id: ${GCP_CLIENT_ID} # SECRET (please store in environment variables) | REQUIRED | string | Enter your Google application's Client ID
+    client_secret: ${GCP_CLIENT_SECRET} # SECRET (please store in environment variables) | REQUIRED | string | Enter your Google application's Client Secret
+    refresh_token: ${GCP_REFRESH_TOKEN} # SECRET (please store in environment variables) | REQUIRED | string | Enter your Google application's refresh token
+    ## -------- Another valid structure for credentials: --------
+    # auth_type: "Service" # REQUIRED | string
+    # service_account_info: ${SERVICE_ACCOUNT_INFO} # SECRET (please store in environment variables) | REQUIRED | string | Enter your Google Cloud <a href="https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating_service_account_keys">service account key</a> in JSON format | Example: { "type": "service_account", "project_id": YOUR_PROJECT_ID, "private_key_id": YOUR_PRIVATE_KEY, ... }
+  row_batch_size: 200 # OPTIONAL | integer | Number of rows fetched when making a Google Sheet API call. Defaults to 200.
+  spreadsheet_id: 1lGvzEpWLxccYhpIEF7lztZ7tdnhsm6KbHFOrg0ofb2c # | string | Enter the link to the Google spreadsheet you want to sync | Example: https://docs.google.com/spreadsheets/d/1hLd9Qqti3UyLXZB2aFfUWDT7BG-arw2xy4HR3D-dwUb/edit
+

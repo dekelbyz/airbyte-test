@@ -1,0 +1,23 @@
+# Configuration for airbyte/destination-csv
+# Documentation about this connector can be found at https://docs.airbyte.com/integrations/destinations/local-csv
+resource_name: "localcsv"
+definition_type: destination
+definition_id: 8be1cf83-fde1-477f-a4ad-318d23c9f3c6
+definition_image: airbyte/destination-csv
+definition_version: 1.0.0
+
+# EDIT THE CONFIGURATION BELOW!
+configuration:
+  delimiter_type:
+    ## -------- Pick one valid structure among the examples below: --------
+    delimiter: "\\u002c" # REQUIRED | string
+    ## -------- Another valid structure for delimiter_type: --------
+    # delimiter: "\\u003b" # REQUIRED | string
+    ## -------- Another valid structure for delimiter_type: --------
+    # delimiter: "\\u007c" # REQUIRED | string
+    ## -------- Another valid structure for delimiter_type: --------
+    # delimiter: "\\u0009" # REQUIRED | string
+    ## -------- Another valid structure for delimiter_type: --------
+    # delimiter: "\\u0020" # REQUIRED | string
+  destination_path: /Users/dqlbyzy/Desktop/another.csv # | string | Path to the directory where csv files will be written. The destination uses the local mount "/local" and any data files will be placed inside that local mount. For more information check out our <a href="https://docs.airbyte.com/integrations/destinations/local-csv">docs</a> | Example: /local
+
